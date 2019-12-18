@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E60BA7A23AA8A1400369031 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E60BA7923AA8A1400369031 /* StudentViewController.swift */; };
 		58B26EE423A92DF300912270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B26EE323A92DF300912270 /* AppDelegate.swift */; };
 		58B26EE623A92DF300912270 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B26EE523A92DF300912270 /* SceneDelegate.swift */; };
 		58B26EE823A92DF300912270 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B26EE723A92DF300912270 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E60BA7923AA8A1400369031 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		58B26EE023A92DF300912270 /* Check In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B26EE323A92DF300912270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58B26EE523A92DF300912270 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				58B26EE523A92DF300912270 /* SceneDelegate.swift */,
 				58B26EE723A92DF300912270 /* ViewController.swift */,
 				58B26EE923A92DF300912270 /* Main.storyboard */,
+				2E60BA7923AA8A1400369031 /* StudentViewController.swift */,
 				58B26EEC23A92DF600912270 /* Assets.xcassets */,
 				58B26EEE23A92DF600912270 /* LaunchScreen.storyboard */,
 				58B26EF123A92DF600912270 /* Info.plist */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E60BA7A23AA8A1400369031 /* StudentViewController.swift in Sources */,
 				58B26EE823A92DF300912270 /* ViewController.swift in Sources */,
 				58B26EE423A92DF300912270 /* AppDelegate.swift in Sources */,
 				58B26EE623A92DF300912270 /* SceneDelegate.swift in Sources */,
