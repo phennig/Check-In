@@ -19,11 +19,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        <#code#>
+       return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        <#code#>
+        return checkInLocations.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let titleRow = checkInLocations[row]
+        return titleRow
+        
     }
     
 

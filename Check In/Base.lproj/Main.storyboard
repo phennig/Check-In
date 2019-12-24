@@ -18,6 +18,10 @@
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NQ8-9a-5df">
                                 <rect key="frame" x="0.0" y="247" width="1366" height="530"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jzZ-UJ-F1e"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="UJa-Bu-EEt"/>
+                                </connections>
                             </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
