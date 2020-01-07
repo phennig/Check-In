@@ -10,9 +10,13 @@ import UIKit
 
 class StudentViewController: UIViewController {
 
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var klcOutlet: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
 
+    @IBAction func klcButton(_ sender: UIButton) {
+    }
 }
