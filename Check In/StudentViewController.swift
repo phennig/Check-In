@@ -43,4 +43,15 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+    
+    func locationAlert(selected:UIButton){
+        let alert = UIAlertController(title: "You location", message: "selected", preferredStyle: .alert)
+        let confirmButton =  UIAlertAction(title: "Confirm Location", style: .default) { (action) in
+            //send location to Firebase
+        }
+        let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(confirmButton)
+        alert.addAction(declineButton)
+        present(alert, animated: true, completion: nil)
+    }
 }
