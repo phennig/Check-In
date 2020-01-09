@@ -17,6 +17,7 @@
 		58B26EEB23A92DF300912270 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B26EE923A92DF300912270 /* Main.storyboard */; };
 		58B26EED23A92DF600912270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B26EEC23A92DF600912270 /* Assets.xcassets */; };
 		58B26EF023A92DF600912270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B26EEE23A92DF600912270 /* LaunchScreen.storyboard */; };
+		AF3E3B9C23C7843500BBF0B7 /* ExtensionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3E3B9B23C7843500BBF0B7 /* ExtensionsViewController.swift */; };
 		B09D5F9F51DCE7AA81A65330 /* Pods_Check_In.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356D9B432925AACEA28ED97 /* Pods_Check_In.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 		58B26EEC23A92DF600912270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58B26EEF23A92DF600912270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58B26EF123A92DF600912270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF3E3B9723C7841100BBF0B7 /* Check In-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Check In-Bridging-Header.h"; sourceTree = "<group>"; };
+		AF3E3B9B23C7843500BBF0B7 /* ExtensionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionsViewController.swift; sourceTree = "<group>"; };
 		FBAD3141047ACF7948087383 /* Pods-Check In.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check In.debug.xcconfig"; path = "Target Support Files/Pods-Check In/Pods-Check In.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +78,7 @@
 				58B26EE523A92DF300912270 /* SceneDelegate.swift */,
 				58B26EE923A92DF300912270 /* Main.storyboard */,
 				58B26EE723A92DF300912270 /* ViewController.swift */,
+				AF3E3B9B23C7843500BBF0B7 /* ExtensionsViewController.swift */,
 				2E73164923AA8CF50068273E /* LocationViewController.swift */,
 				2E60BA7923AA8A1400369031 /* StudentViewController.swift */,
 				2E65295323AA8DC6004B3F72 /* TeacherViewController.swift */,
@@ -82,6 +86,7 @@
 				58B26EEE23A92DF600912270 /* LaunchScreen.storyboard */,
 				58B26EF123A92DF600912270 /* Info.plist */,
 				583D585623C50D7200531C55 /* GoogleService-Info.plist */,
+				AF3E3B9723C7841100BBF0B7 /* Check In-Bridging-Header.h */,
 			);
 			path = "Check In";
 			sourceTree = "<group>";
@@ -137,6 +142,7 @@
 				TargetAttributes = {
 					58B26EDF23A92DF300912270 = {
 						CreatedOnToolsVersion = 11.2.1;
+						LastSwiftMigration = 1120;
 					};
 				};
 			};
@@ -224,6 +230,7 @@
 				58B26EE823A92DF300912270 /* ViewController.swift in Sources */,
 				58B26EE423A92DF300912270 /* AppDelegate.swift in Sources */,
 				58B26EE623A92DF300912270 /* SceneDelegate.swift in Sources */,
+				AF3E3B9C23C7843500BBF0B7 /* ExtensionsViewController.swift in Sources */,
 				2E65295423AA8DC6004B3F72 /* TeacherViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +376,7 @@
 			baseConfigurationReference = FBAD3141047ACF7948087383 /* Pods-Check In.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DC4RSCG25N;
 				INFOPLIST_FILE = "Check In/Info.plist";
@@ -378,6 +386,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phs.Check-In";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Check In/Check In-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -388,6 +398,7 @@
 			baseConfigurationReference = 2FCEC132C4B95C5D7330B683 /* Pods-Check In.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DC4RSCG25N;
 				INFOPLIST_FILE = "Check In/Info.plist";
@@ -397,6 +408,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.phs.Check-In";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Check In/Check In-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
