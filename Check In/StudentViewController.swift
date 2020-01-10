@@ -22,19 +22,19 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func klcButton(_ sender: UIButton) {
-    
+        locationAlert(selected: "KLC")
     }
     
     @IBAction func commonsButton(_ sender: UIButton) {
-    
+        locationAlert(selected: "Commons")
     }
     
     @IBAction func lunchButton(_ sender: UIButton) {
-    
+        locationAlert(selected: "Cafe")
     }
     
     @IBAction func msrButton(_ sender: UIButton) {
-        
+        locationAlert(selected: "M.S.R.R")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -42,5 +42,16 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
         //locationTextField.position(from: <#T##UITextPosition#>, offset: <#T##Int#>)
         textField.resignFirstResponder()
         return true
+    }
+    
+    func locationAlert(selected:String){
+        let alert = UIAlertController(title: "You location", message: selected, preferredStyle: .alert)
+        let confirmButton =  UIAlertAction(title: "Confirm Location", style: .default) { (action) in
+            //send location to Firebase
+        }
+        let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(confirmButton)
+        alert.addAction(declineButton)
+        present(alert, animated: true, completion: nil)
     }
 }
