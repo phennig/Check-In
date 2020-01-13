@@ -7,37 +7,36 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class ViewController: UIViewController
 {
     @IBOutlet weak var EmailTextField: UIStackView!
     @IBOutlet weak var PasswordTextField: UIStackView!
     
-
-        override func viewDidLoad()
-        {
-            
-            super.viewDidLoad()
-            // Do any additional setup after loading the view.
-            
-    //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: ViewController.keyboard, object: <#T##Any?#>)
-       }
-        //Work in process for text field - Arslan
-       
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        let db = Firestore.firestore()
+        let collection = db.collection("User")
+        let doc = collection.document("Students")
         
-       
-        
-        @objc func keyboardWillChange(notification: Notification)
-        {
-            print("JELP \(notification.name.rawValue)")
+        doc.getDocument { (document, err) in
+            if let err = err {
+                print(err.localizedDescription)
+            } else {
+                let data = document?.data() as! [String : [String : Any]]
+                print(data)
+            }
         }
-        //work in progress - Arslan
+    }
+
+    //work in progress - Arslan
     @IBAction func LogInButton(_ sender: UIButton)
     {
-        
-        
-    }
     
     }
+    
+}
 
         // Dan : - )
