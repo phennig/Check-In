@@ -10,6 +10,8 @@ import UIKit
 
 class ViewController: UIViewController
 {
+    @IBOutlet weak var EmailTextField: UIStackView!
+    @IBOutlet weak var PasswordTextField: UIStackView!
     
 
         override func viewDidLoad()
@@ -30,7 +32,12 @@ class ViewController: UIViewController
             print("JELP \(notification.name.rawValue)")
         }
         //work in progress - Arslan
-
+    @IBAction func LogInButton(_ sender: UIButton)
+    {
+        
+        
+    }
+    
     }
 
         // Dan : - )
