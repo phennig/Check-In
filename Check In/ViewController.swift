@@ -11,8 +11,8 @@ import FirebaseFirestore
 
 class ViewController: UIViewController
 {
-    @IBOutlet weak var EmailTextField: UIStackView!
-    @IBOutlet weak var PasswordTextField: UIStackView!
+    @IBOutlet weak var EmailTextField: UITextField!
+    @IBOutlet weak var PasswordTextField: UITextField!
     
     override func viewDidLoad()
     {
@@ -34,7 +34,10 @@ class ViewController: UIViewController
     //work in progress - Arslan
     @IBAction func LogInButton(_ sender: UIButton)
     {
-    
+        // Fixed it for ya – Muhammet
+        let email = EmailTextField.text ?? ""
+        let password = PasswordTextField.text ?? ""
+        print(email, password)
     }
     
 }
