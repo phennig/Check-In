@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import MessageUI
 
 class ViewController: UIViewController
 {
@@ -20,18 +21,10 @@ class ViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        let db = Firestore.firestore()
-        let collection = db.collection("User")
-        let doc = collection.document("Students")
+        let ComposeVC = MFMailComposeViewController()
         
-        doc.getDocument { (document, err) in
-            if let err = err {
-                print(err.localizedDescription)
-            } else {
-                let data = document?.data()
-                print(data)
-            }
-        }
+        
+        
         
       //  db.d
         
@@ -42,9 +35,14 @@ class ViewController: UIViewController
     @IBAction func LogInButton(_ sender: UIButton)
     {
         // Fixed it for ya – Muhammet
-        let email = EmailTextField.text ?? ""
-        let password = PasswordTextField.text ?? ""
-        print(email, password)
+        let Email = EmailTextField.text
+        let password = PasswordTextField.text
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let nvc = segue.destination as! StudentViewController
+        nvc.email = EmailTextField.text!
     }
     
 }
