@@ -65,8 +65,8 @@
                     </view>
                     <navigationItem key="navigationItem" title="Log in" id="ubR-S4-Vrt"/>
                     <connections>
-                        <outlet property="EmailTextField" destination="Dom-XO-NIa" id="9pl-W8-Aoa"/>
-                        <outlet property="PasswordTextField" destination="Dom-XO-NIa" id="Ae1-20-MnT"/>
+                        <outlet property="EmailTextField" destination="2PX-sm-vw2" id="oDa-SV-BgO"/>
+                        <outlet property="PasswordTextField" destination="MGY-le-vsG" id="Chg-kB-OSe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class StudentViewController: UIViewController, UITextFieldDelegate
 {
+    var email = ""
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var klcOutlet: UIButton!
@@ -56,6 +58,8 @@ class StudentViewController: UIViewController, UITextFieldDelegate
         let alert = UIAlertController(title: "You location", message: selected, preferredStyle: .alert)
         let confirmButton =  UIAlertAction(title: "Confirm Location", style: .default) { (action) in
             //send location to Firebase
+            let db = Firestore.firestore()
+            db.collection("User").addDocument(data: ["Email" : self.email, "Location" : selected])
         }
         let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(confirmButton)

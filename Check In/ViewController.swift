@@ -11,8 +11,11 @@ import FirebaseFirestore
 
 class ViewController: UIViewController
 {
-    @IBOutlet weak var EmailTextField: UIStackView!
-    @IBOutlet weak var PasswordTextField: UIStackView!
+   
+  
+    @IBOutlet weak var EmailTextField: UITextField!
+    @IBOutlet weak var PasswordTextField: UITextField!
+    
     
     override func viewDidLoad()
     {
@@ -25,16 +28,31 @@ class ViewController: UIViewController
             if let err = err {
                 print(err.localizedDescription)
             } else {
-                let data = document?.data() as! [String : [String : Any]]
+                let data = document?.data()
                 print(data)
             }
         }
+        
+      //  db.d
+        
+        
     }
 
     //work in progress - Arslan
     @IBAction func LogInButton(_ sender: UIButton)
     {
-    
+        var lol = EmailTextField.text
+        var Password = PasswordTextField.text
+        let db = Firestore.firestore()
+        db.collection("User").addDocument(data: ["Name":  lol , "Password" : Password])
+
+
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        let nvc = segue.destination as! StudentViewController
+        nvc.email = EmailTextField.text!
     }
     
 }
