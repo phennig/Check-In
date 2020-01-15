@@ -41,18 +41,10 @@ class ViewController: UIViewController
     //work in progress - Arslan
     @IBAction func LogInButton(_ sender: UIButton)
     {
-        var lol = EmailTextField.text
-        var Password = PasswordTextField.text
-        let db = Firestore.firestore()
-        db.collection("User").addDocument(data: ["Name":  lol , "Password" : Password])
-
-
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        let nvc = segue.destination as! StudentViewController
-        nvc.email = EmailTextField.text!
+        // Fixed it for ya – Muhammet
+        let email = EmailTextField.text ?? ""
+        let password = PasswordTextField.text ?? ""
+        print(email, password)
     }
     
 }
