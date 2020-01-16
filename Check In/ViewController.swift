@@ -25,7 +25,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         // sendEmail()
     }
     
-    /// - Authors: Muhammet Balsoy
+    /// - Authors: Muhammet Balsoy, Paul Hudson
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
@@ -39,7 +39,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         }
     }
     
-    /// - Authors: Muhammet Balsoy
+    /// - Authors: Muhammet Balsoy, Paul Hudson
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }
