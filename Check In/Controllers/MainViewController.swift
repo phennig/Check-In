@@ -9,39 +9,23 @@
 import UIKit
 import FirebaseFirestore
 
-class StudentViewController: UIViewController, UITextFieldDelegate {
+class MainViewController:
+    UIViewController,
+    UITextFieldDelegate {
+    
     var email = ""
 
     @IBOutlet weak var locationTextField: UITextField!
-    @IBOutlet weak var klcOutlet: UIButton!
-    @IBOutlet weak var commonsOutlet: UIButton!
-    @IBOutlet weak var lunchOutlet: UIButton!
-    @IBOutlet weak var msrOutlet: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    }
-
-    @IBAction func klcButton(_ sender: UIButton) {
-        locationAlert(selected: "KLC")
-    }
-    
-    @IBAction func commonsButton(_ sender: UIButton) {
-        locationAlert(selected: "Commons")
-    }
-    
-    @IBAction func lunchButton(_ sender: UIButton) {
-        locationAlert(selected: "Cafe")
-    }
-    
-    @IBAction func msrButton(_ sender: UIButton) {
-        locationAlert(selected: "M.S.R.R")
+        
+        navigationItem.hidesBackButton = true
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //relocate the textfield to the top of the screen
-        //locationTextField.position(from: <#T##UITextPosition#>, offset: <#T##Int#>)
+        //locationTextField.position(from: , offset: )
         textField.resignFirstResponder()
         return true
     }

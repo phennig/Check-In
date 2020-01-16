@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestore
 import MessageUI
 
-class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class LoginViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     // Later use camelcased variables plz
     @IBOutlet weak var EmailTextField: UITextField!
@@ -26,7 +26,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
 //         sendEmail()
     }
     
-    /// - Authors: Muhammet Balsoy, Paul Hudson
+    /// - Authors: Muhammet Balsoy, Paul Hudson at hackingwithswift.com
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
             let mail = MFMailComposeViewController()
@@ -40,7 +40,7 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
         }
     }
     
-    /// - Authors: Muhammet Balsoy, Paul Hudson
+    /// - Authors: Muhammet Balsoy, Paul Hudson at hackingwithswift.com
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true)
     }
@@ -57,11 +57,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     
     /// - Authors: Arslan Khan
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let nvc = segue.destination as! StudentViewController
+        let nvc = segue.destination as! MainViewController
         nvc.email = EmailTextField.text!
     }
     
 }
 
         // Dan : - )
-        // Moe : - /
+        // Moe : - )

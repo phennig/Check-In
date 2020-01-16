@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C8H-n9-HcD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="C8H-n9-HcD">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,13 +11,13 @@
         <!--Log in-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dom-XO-NIa">
-                                <rect key="frame" x="40" y="90" width="944" height="269"/>
+                                <rect key="frame" x="40" y="142" width="944" height="269"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8C-bb-H9Q">
                                         <rect key="frame" x="0.0" y="0.0" width="944" height="20.5"/>
@@ -86,12 +86,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAX-ub-GkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="912"/>
+            <point key="canvasLocation" x="2210" y="898"/>
         </scene>
-        <!--Student View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="ZzM-gY-0kd">
             <objects>
-                <viewController id="q7S-BD-93a" customClass="StudentViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="q7S-BD-93a" customClass="MainViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nTk-FL-tbC">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,64 +101,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tda-Ls-NIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913" y="912"/>
+            <point key="canvasLocation" x="2876" y="898"/>
         </scene>
-        <!--CHECK IN FAM-->
+        <!--Check-In-->
         <scene sceneID="TPH-oN-23V">
             <objects>
-                <viewController id="KQ5-Rv-xNw" customClass="StudentViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KQ5-Rv-xNw" customClass="MainViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BP8-0T-5CR">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lh-HY-Mpe">
-                                <rect key="frame" x="20" y="54" width="492" height="360"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="187"/>
-                                <state key="normal" title="KLC">
-                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="klcButton:" destination="KQ5-Rv-xNw" eventType="touchUpInside" id="zk0-KJ-z65"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8R-Hm-vLk">
-                                <rect key="frame" x="520" y="50" width="484" height="363"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="88"/>
-                                <state key="normal" title="COMMONS">
-                                    <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="commonsButton:" destination="KQ5-Rv-xNw" eventType="touchUpInside" id="eG8-gf-7wn"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tcc-WQ-Ozd">
-                                <rect key="frame" x="20" y="438" width="453" height="324"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="137"/>
-                                <state key="normal" title="CAFE">
-                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="lunchButton:" destination="KQ5-Rv-xNw" eventType="touchUpInside" id="v36-zY-tYk"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zTL-6I-pBW">
-                                <rect key="frame" x="520" y="438" width="484" height="324"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="135"/>
-                                <state key="normal" title="M.S.R.R">
-                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="msrButton:" destination="KQ5-Rv-xNw" eventType="touchUpInside" id="E0J-RR-PKh"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="ENTER LOCATION" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a6T-f6-eQx">
                                 <rect key="frame" x="81" y="699" width="862" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -168,34 +120,13 @@
                                     <outlet property="delegate" destination="KQ5-Rv-xNw" id="q19-V6-liU"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Math Science Resource Room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F7K-ku-ehG">
-                                <rect key="frame" x="547" y="533" width="457" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ButtonsPage" translatesAutoresizingMaskIntoConstraints="NO" id="pXU-Gf-cI7">
-                                <rect key="frame" x="0.0" y="13" width="1024" height="768"/>
-                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="pXU-Gf-cI7" secondAttribute="bottom" id="3Ly-wl-WOF"/>
-                            <constraint firstAttribute="trailing" secondItem="pXU-Gf-cI7" secondAttribute="trailing" id="4Ci-Yn-hfi"/>
-                            <constraint firstItem="pXU-Gf-cI7" firstAttribute="top" secondItem="BP8-0T-5CR" secondAttribute="top" id="9wN-aQ-Mcc"/>
-                            <constraint firstItem="pXU-Gf-cI7" firstAttribute="leading" secondItem="BP8-0T-5CR" secondAttribute="leading" id="jrK-tb-z5b"/>
-                        </constraints>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="NMn-5r-be7"/>
                     </view>
-                    <navigationItem key="navigationItem" title="CHECK IN FAM" id="RBH-vv-4ui"/>
+                    <navigationItem key="navigationItem" title="Check-In" id="RBH-vv-4ui"/>
                     <connections>
-                        <outlet property="commonsOutlet" destination="v8R-Hm-vLk" id="GGp-9v-1qo"/>
-                        <outlet property="klcOutlet" destination="2Lh-HY-Mpe" id="hu4-vd-5Ew"/>
                         <outlet property="locationTextField" destination="a6T-f6-eQx" id="g9o-dd-bJY"/>
-                        <outlet property="lunchOutlet" destination="Tcc-WQ-Ozd" id="XFm-k3-Dzb"/>
-                        <outlet property="msrOutlet" destination="zTL-6I-pBW" id="13R-cW-msk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJC-Hu-L1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -207,9 +138,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="C8H-n9-HcD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wHo-bu-ovt">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="wHo-bu-ovt">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="102"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -221,7 +153,4 @@
             <point key="canvasLocation" x="2100.5859375" y="103.90625"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ButtonsPage" width="794" height="614"/>
-    </resources>
 </document>
