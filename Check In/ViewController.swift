@@ -10,37 +10,52 @@ import UIKit
 import FirebaseFirestore
 import MessageUI
 
-class ViewController: UIViewController
-{
-   
-  
+class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
+
+    // Later use camelcased variables plz
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     
-    
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
-        let ComposeVC = MFMailComposeViewController()
         
-        
-        
-        
-      //  db.d
-        
-        
+        // Uncomment if you want to present ComposeVC on real device
+        // Mail controller is not supported on the simulator
+        // Fixed AppDelegate crash – Muhammet
+        // sendEmail()
     }
+    
+    /// - Authors: Muhammet Balsoy
+    func sendEmail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["teacher@example.com"])
+            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
 
-    //work in progress - Arslan
-    @IBAction func LogInButton(_ sender: UIButton)
-    {
-        // Fixed it for ya – Muhammet
-        let Email = EmailTextField.text
-        let password = PasswordTextField.text
-        
+            present(mail, animated: true)
+        } else {
+            // show failure alert
+        }
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
+    
+    /// - Authors: Muhammet Balsoy
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
+    /// - Authors: Arslan Khan, Muhammet Balsoy
+    @IBAction func LogInButton(_ sender: UIButton) {
+        // Fixed it for ya – Muhammet
+        if let email = EmailTextField.text, let password = PasswordTextField.text {
+            print(email, password)
+        } else {
+            print("Email or password is empty")
+        }
+    }
+    
+    /// - Authors: Arslan Khan
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nvc = segue.destination as! StudentViewController
         nvc.email = EmailTextField.text!
     }
@@ -48,3 +63,4 @@ class ViewController: UIViewController
 }
 
         // Dan : - )
+        // Moe : - /
