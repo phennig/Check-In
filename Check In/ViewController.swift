@@ -19,10 +19,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Uncomment if you want to present ComposeVC on real device
-        // Mail controller is not supported on the simulator
-        // Fixed AppDelegate crash – Muhammet
-        // sendEmail()
+        /** Uncomment if you want to present ComposeVC on real device.
+            Mail controller is not supported on the simulator.
+            This fixes the AppDelegate crash – Muhammet
+         */
+//         sendEmail()
     }
     
     /// - Authors: Muhammet Balsoy, Paul Hudson
