@@ -811,12 +811,16 @@ PODS:
     - nanopb/encode (= 0.3.9011)
   - nanopb/decode (0.3.9011)
   - nanopb/encode (0.3.9011)
+  - SnapKit (5.0.1)
+  - "UINavigationItem+Margin (2.1.1)"
 
 DEPENDENCIES:
   - Firebase/Analytics
   - Firebase/Core
   - Firebase/Firestore
   - MaterialComponents
+  - SnapKit
+  - "UINavigationItem+Margin"
 
 SPEC REPOS:
   trunk:
@@ -843,6 +847,8 @@ SPEC REPOS:
     - MotionAnimator
     - MotionInterchange
     - nanopb
+    - SnapKit
+    - "UINavigationItem+Margin"
 
 SPEC CHECKSUMS:
   abseil: 18063d773f5366ff8736a050fe035a28f635fd27
@@ -868,7 +874,9 @@ SPEC CHECKSUMS:
   MotionAnimator: ee16aa30567c5bae0fb2750c132915829cfaaf8a
   MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  "UINavigationItem+Margin": 7368d506fb2f7daa0c0489846cc8c2384ab1ab6d
 
-PODFILE CHECKSUM: 5205962d5f676a3905604c7515b77762a9075115
+PODFILE CHECKSUM: 1bdccbec2068c47736546c47e125ae8fe5f5d1f7
 
 COCOAPODS: 1.8.3
