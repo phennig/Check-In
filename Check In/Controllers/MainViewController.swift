@@ -10,6 +10,9 @@ import UIKit
 import FirebaseFirestore
 import SnapKit
 
+var _KNavHeight: CGFloat = 140
+var _KNavCollapsedHeight: CGFloat = 100
+var _KNavTitleSize: CGFloat = 42
 class MainViewController:
     UIViewController,
     UITextFieldDelegate {
@@ -28,7 +31,7 @@ class MainViewController:
         let label = UILabel()
         label.text = "Check-in"
         label.textColor = .black
-        label.font = UIFont.boldSystemFont(ofSize: 42)
+        label.font = UIFont.boldSystemFont(ofSize: _KNavTitleSize)
         return label
     }()
     
@@ -69,7 +72,7 @@ extension MainViewController {
         view.addSubview(navigationBar)
         navigationBar.snp.makeConstraints { (make) in
             make.left.top.right.equalTo(view)
-            make.height.equalTo(140)
+            make.height.equalTo(_KNavHeight)
         }
         
         navigationBar.addSubview(navigationTitle)
@@ -90,20 +93,41 @@ extension MainViewController {
 extension MainViewController:
     UITableViewDelegate,
     UITableViewDataSource {
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scroll = scrollView.contentOffset.y
+        print(scroll)
+        
+        // Expanded = -160
+        let scrollWhenCollapsed = _KNavHeight - _KNavCollapsedHeight
+//        if scroll <= scrollWhenCollapsed && scroll >= 0 {
+//            navigationTitle.fontSize = _KNavTitleSize * (1-(scroll / scrollWhenCollapsed))
+//        }
+        
+        if scroll <= scrollWhenCollapsed {
+            navigationBar.snp.updateConstraints { (make) in
+                make.height.equalTo(_KNavHeight - scroll)
+            }
+        } else {
+            navigationBar.snp.updateConstraints { (make) in
+                make.height.equalTo(_KNavCollapsedHeight)
+            }
+        }
+    }
     
     func initializeTable() {
         tableview.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableview.dataSource = self
         tableview.delegate = self
-        tableview.contentInset = UIEdgeInsets(top: 140, left: 85, bottom: 0, right: -85)
+        tableview.contentInset = UIEdgeInsets(top: _KNavHeight, left: 85, bottom: 50, right: -85)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 32
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         cell.textLabel?.text = "Test"
         cell.detailTextLabel?.text = "gg"
         cell.showsReorderControl = true

@@ -1,6 +1,6 @@
 //
 //  UIKit+Extension.swift
-//  Check In
+//  Check In, imported from BITS Schedule
 //
 //  Created by Fatih Balsoy on 1/17/20.
 //  Copyright © 2020 Timothy P. Hennig. All rights reserved.
