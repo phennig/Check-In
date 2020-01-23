@@ -10,22 +10,71 @@ import UIKit
 import FirebaseFirestore
 import MessageUI
 
-class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
+class ViewController: UIViewController, MFMailComposeViewControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+
 
     // Later use camelcased variables plz
+    // no
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
-    
+    @IBOutlet weak var TeacherLabel: UILabel!
+    @IBOutlet weak var TeacherPicker: UIPickerView!
+    @IBOutlet weak var PeriodoPicker: UIPickerView!
+    @IBOutlet weak var PeriodLabel: UILabel!
+    let period = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    let teachers = ["Hennig", "Reidy", "TEacher3", ".kjawkb.avklj"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /** Uncomment if you want to present ComposeVC on real device.
-            Mail controller is not supported on the simulator.
-            This fixes the AppDelegate crash – Muhammet
-         */
+        TeacherPicker.dataSource = self
+        TeacherPicker.delegate = self
+        PeriodoPicker.dataSource = self
+        PeriodoPicker.delegate = self
 //         sendEmail()
     }
+    func numberOfComponents(in pickerView: UIPickerView ) -> Int
+    {
+        return 1
+    }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        var lol : Any?
+        
+        if pickerView == TeacherPicker
+        {
+            lol = teachers[row]
+        }
+        if pickerView == PeriodoPicker
+        {
+            lol = period[row]
+        }
+        
+        return lol as! String
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+         
+        var lol : Any?
+        if pickerView == TeacherPicker
+        {
+            lol = teachers.count
+        }
+        if pickerView == PeriodoPicker
+        {
+            lol =  period.count
+        }
+        
+        return lol as! Int
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+    }
+    
+    
+ 
     /// - Authors: Muhammet Balsoy, Paul Hudson
     func sendEmail() {
         if MFMailComposeViewController.canSendMail() {
