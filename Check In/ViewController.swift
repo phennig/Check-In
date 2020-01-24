@@ -32,6 +32,9 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate, UIP
         PeriodoPicker.dataSource = self
         PeriodoPicker.delegate = self
 //         sendEmail()
+        TeacherLabel.text = ""
+        PeriodLabel.text = ""
+       
     }
     func numberOfComponents(in pickerView: UIPickerView ) -> Int
     {
@@ -69,8 +72,17 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate, UIP
         
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+       if pickerView == TeacherPicker
+       {
+            TeacherLabel.text = teachers[row]
+       }
+       if pickerView == PeriodoPicker
+       {
+            PeriodLabel.text = period[row]
+       }
+       
     }
     
     
