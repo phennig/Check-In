@@ -34,17 +34,26 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
        
         let userDefaults = UserDefaults.standard
         if let array = userDefaults.array(forKey: "Array"){
-            EmailTextField.text = "\(array)"
-            TeacherLabel.text = "\(array)"
-            PeriodLabel.text = "\(array)"
+            EmailTextField.text = "\(array[0])"
+            TeacherLabel.text = "\(array[1])"
+            PeriodLabel.text = "\(array[2])"
+            
         }
         
         print(Array<Any>.self).self
-        if TeacherLabel.text != ""
+        if TeacherLabel.text != "", PeriodLabel.text != "", EmailTextField.text != ""
         {
-           // TeacherLabel.text = Array.index[2]
+            if let nextvc = self.storyboard?.instantiateViewController(withIdentifier:
+            "paper")
+            {
+               
+               
+                self.navigationController?.pushViewController(nextvc, animated: true)
+            }
+          
             
         }
+     
     }
     
     func numberOfComponents(in pickerView: UIPickerView ) -> Int
@@ -119,6 +128,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     /// - Authors: Arslan Khan
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nvc = segue.destination as! StudentViewController
+        
         nvc.email = EmailTextField.text!
         nvc.period = PeriodLabel.text!
         nvc.teacher = TeacherLabel.text!

@@ -140,7 +140,7 @@
         <!--CHECK IN FAM-->
         <scene sceneID="TPH-oN-23V">
             <objects>
-                <viewController id="KQ5-Rv-xNw" customClass="StudentViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="paper" id="KQ5-Rv-xNw" customClass="StudentViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BP8-0T-5CR">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

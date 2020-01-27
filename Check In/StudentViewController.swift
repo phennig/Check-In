@@ -10,7 +10,7 @@ import UIKit
 import FirebaseFirestore
 
 class StudentViewController: UIViewController, UITextFieldDelegate {
-    var email = ""
+    var email : Any?
     var teacher = ""
     var period = ""
 
@@ -22,7 +22,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(email, 5)
     }
 
     @IBAction func klcButton(_ sender: UIButton) {
