@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var PeriodoPicker: UIPickerView!
     @IBOutlet weak var PeriodLabel: UILabel!
     let period = ["1", "2", "3", "4", "5", "6", "7", "8"]
-    let teachers = ["Hennig", "Reidy", "TEacher3", ".kjawkb.avklj"]
+    let teachers = ["Hennig", "Reidy", "Kim", "Page"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
