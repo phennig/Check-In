@@ -40,8 +40,6 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //relocate the textfield to the top of the screen
-        //locationTextField.position(from: <#T##UITextPosition#>, offset: <#T##Int#>)
         textField.resignFirstResponder()
         return true
     }
@@ -52,7 +50,6 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
             //send location to Firebase
             let db = Firestore.firestore()
             db.collection("Students").addDocument(data: ["Email" : self.email, "Location" : selected])
-            
         }
         let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(confirmButton)
