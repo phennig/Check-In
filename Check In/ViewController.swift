@@ -8,41 +8,79 @@
 
 import UIKit
 import FirebaseFirestore
-import MessageUI
 
-class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
-
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
     // Later use camelcased variables plz
+    // no
+    // yes
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
-    
+    @IBOutlet weak var TeacherLabel: UILabel!
+    @IBOutlet weak var TeacherPicker: UIPickerView!
+    @IBOutlet weak var PeriodoPicker: UIPickerView!
+    @IBOutlet weak var PeriodLabel: UILabel!
+    let period = ["1", "2", "3", "4", "5", "6", "7", "8"]
+    let teachers = ["Hennig", "Reidy", "TEacher3", ".kjawkb.avklj"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /** Uncomment if you want to present ComposeVC on real device.
-            Mail controller is not supported on the simulator.
-            This fixes the AppDelegate crash – Muhammet
-         */
-//         sendEmail()
+        TeacherPicker.dataSource = self
+        TeacherPicker.delegate = self
+        PeriodoPicker.dataSource = self
+        PeriodoPicker.delegate = self
+        TeacherLabel.text = ""
+        PeriodLabel.text = ""
+       
     }
     
-    /// - Authors: Muhammet Balsoy, Paul Hudson
-    func sendEmail() {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients(["teacher@example.com"])
-            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
-
-            present(mail, animated: true)
-        } else {
-            // show failure alert
+    func numberOfComponents(in pickerView: UIPickerView ) -> Int
+    {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        var lol : Any?
+        
+        if pickerView == TeacherPicker
+        {
+            lol = teachers[row]
         }
+        if pickerView == PeriodoPicker
+        {
+            lol = period[row]
+        }
+        
+        return lol as! String
     }
     
-    /// - Authors: Muhammet Balsoy, Paul Hudson
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true)
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+         
+        var lol : Any?
+        if pickerView == TeacherPicker
+        {
+            lol = teachers.count
+        }
+        if pickerView == PeriodoPicker
+        {
+            lol =  period.count
+        }
+        
+        return lol as! Int
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+       if pickerView == TeacherPicker
+       {
+            TeacherLabel.text = teachers[row]
+       }
+       if pickerView == PeriodoPicker
+       {
+            PeriodLabel.text = period[row]
+       }
+       
     }
     
     /// - Authors: Arslan Khan, Muhammet Balsoy
@@ -59,9 +97,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nvc = segue.destination as! StudentViewController
         nvc.email = EmailTextField.text!
+        nvc.period = PeriodLabel.text!
+        nvc.teacher = TeacherLabel.text!
     }
     
 }
 
         // Dan : - )
-        // Moe : - /
+        // Moe : - )

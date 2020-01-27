@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 class StudentViewController: UIViewController, UITextFieldDelegate {
     var email = ""
+    var teacher = ""
+    var period = ""
 
     @IBOutlet weak var locationTextField: UITextField!
     @IBOutlet weak var klcOutlet: UIButton!
@@ -49,7 +51,8 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
         let confirmButton =  UIAlertAction(title: "Confirm Location", style: .default) { (action) in
             //send location to Firebase
             let db = Firestore.firestore()
-            db.collection("Students").addDocument(data: ["Email" : self.email, "Location" : selected])
+            db.collection("Students").addDocument(data: ["Email" : self.email, "Location" : selected, "Teacher" : self.teacher, "Period" : self.period])
+            
         }
         let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(confirmButton)
