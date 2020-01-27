@@ -96,13 +96,16 @@ extension MainViewController:
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let scroll = scrollView.contentOffset.y
+        let scrollWhenCollapsed = _KNavHeight - _KNavCollapsedHeight
+        let percent = scroll / scrollWhenCollapsed
+        
         print(scroll)
         
         // Expanded = -160
-        let scrollWhenCollapsed = _KNavHeight - _KNavCollapsedHeight
-//        if scroll <= scrollWhenCollapsed && scroll >= 0 {
-//            navigationTitle.fontSize = _KNavTitleSize * (1-(scroll / scrollWhenCollapsed))
-//        }
+        if scroll <= scrollWhenCollapsed && scroll >= 0 {
+            let size = _KNavTitleSize - 10 * percent
+            navigationTitle.font = UIFont.boldSystemFont(ofSize: size)
+        }
         
         if scroll <= scrollWhenCollapsed {
             navigationBar.snp.updateConstraints { (make) in

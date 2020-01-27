@@ -19,30 +19,6 @@ class LoginViewController: UIViewController, MFMailComposeViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        /** Uncomment if you want to present ComposeVC on real device.
-            Mail controller is not supported on the simulator.
-            This fixes the AppDelegate crash – Muhammet
-         */
-//         sendEmail()
-    }
-    
-    /// - Authors: Muhammet Balsoy, Paul Hudson at hackingwithswift.com
-    func sendEmail() {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients(["teacher@example.com"])
-            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
-
-            present(mail, animated: true)
-        } else {
-            // show failure alert
-        }
-    }
-    
-    /// - Authors: Muhammet Balsoy, Paul Hudson at hackingwithswift.com
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true)
     }
     
     /// - Authors: Arslan Khan, Muhammet Balsoy
