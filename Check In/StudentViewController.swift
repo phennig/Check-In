@@ -42,8 +42,6 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //relocate the textfield to the top of the screen
-        //locationTextField.position(from: <#T##UITextPosition#>, offset: <#T##Int#>)
         textField.resignFirstResponder()
         return true
     }
