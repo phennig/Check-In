@@ -32,6 +32,19 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         TeacherLabel.text = ""
         PeriodLabel.text = ""
        
+        let userDefaults = UserDefaults.standard
+        if let array = userDefaults.array(forKey: "Array"){
+            EmailTextField.text = "\(array)"
+            TeacherLabel.text = "\(array)"
+            PeriodLabel.text = "\(array)"
+        }
+        
+        print(Array<Any>.self).self
+        if TeacherLabel.text != ""
+        {
+           // TeacherLabel.text = Array.index[2]
+            
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView ) -> Int
@@ -91,6 +104,16 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         } else {
             print("Email or password is empty")
         }
+        
+        let defaults = UserDefaults.standard
+        if let array1 = EmailTextField.text, let array2 = TeacherLabel.text, let array3 = PeriodLabel.text
+        {
+            let array = [array1, array2, array3]
+            defaults.set(array, forKey: "Array")
+            
+            
+        }
+        
     }
     
     /// - Authors: Arslan Khan
