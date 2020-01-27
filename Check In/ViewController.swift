@@ -120,6 +120,8 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate, UIP
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nvc = segue.destination as! StudentViewController
         nvc.email = EmailTextField.text!
+        nvc.period = PeriodLabel.text!
+        nvc.teacher = TeacherLabel.text!
     }
     
 }
