@@ -8,14 +8,12 @@
 
 import UIKit
 import FirebaseFirestore
-import MessageUI
 
-class ViewController: UIViewController, MFMailComposeViewControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-
-
     // Later use camelcased variables plz
     // no
+    // yes
     @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var TeacherLabel: UILabel!
@@ -31,11 +29,11 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate, UIP
         TeacherPicker.delegate = self
         PeriodoPicker.dataSource = self
         PeriodoPicker.delegate = self
-//         sendEmail()
         TeacherLabel.text = ""
         PeriodLabel.text = ""
        
     }
+    
     func numberOfComponents(in pickerView: UIPickerView ) -> Int
     {
         return 1
@@ -85,27 +83,6 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate, UIP
        
     }
     
-    
- 
-    /// - Authors: Muhammet Balsoy, Paul Hudson
-    func sendEmail() {
-        if MFMailComposeViewController.canSendMail() {
-            let mail = MFMailComposeViewController()
-            mail.mailComposeDelegate = self
-            mail.setToRecipients(["teacher@example.com"])
-            mail.setMessageBody("<p>You're so awesome!</p>", isHTML: true)
-
-            present(mail, animated: true)
-        } else {
-            // show failure alert
-        }
-    }
-    
-    /// - Authors: Muhammet Balsoy, Paul Hudson
-    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        controller.dismiss(animated: true)
-    }
-    
     /// - Authors: Arslan Khan, Muhammet Balsoy
     @IBAction func LogInButton(_ sender: UIButton) {
         // Fixed it for ya – Muhammet
@@ -127,4 +104,4 @@ class ViewController: UIViewController, MFMailComposeViewControllerDelegate, UIP
 }
 
         // Dan : - )
-        // Moe : - /
+        // Moe : - )
