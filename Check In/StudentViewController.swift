@@ -47,7 +47,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     }
     
     func locationAlert(selected:String) {
-        let alert = UIAlertController(title: "Your location", message: selected, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Your selected location:", message: selected, preferredStyle: .alert)
         let confirmButton =  UIAlertAction(title: "Confirm Location", style: .default) { (action) in
             //send location to Firebase
             let db = Firestore.firestore()
