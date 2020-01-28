@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var PeriodoPicker: UIPickerView!
     @IBOutlet weak var PeriodLabel: UILabel!
     let period = ["1", "2", "3", "4", "5", "6", "7", "8"]
-    let teachers = ["Hennig", "Reidy", "TEacher3", ".kjawkb.avklj"]
+    let teachers = ["Hennig", "Reidy", "Kim", "Page"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +32,33 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         TeacherLabel.text = ""
         PeriodLabel.text = ""
        
+        let userDefaults = UserDefaults.standard
+        if let array = userDefaults.array(forKey: "Array"){
+            EmailTextField.text = "\(array[0])"
+            TeacherLabel.text = "\(array[1])"
+            PeriodLabel.text = "\(array[2])"
+            
+        }
+        
+        print(Array<Any>.self).self
+        //Work in progress
+//        if TeacherLabel.text != "", PeriodLabel.text != "", EmailTextField.text != ""
+//        {
+//
+//            if let nextvc = self.storyboard?.instantiateViewController(withIdentifier:
+//            "paper")
+//            {
+//                let segue = UIStoryboardSegue()
+//                let vc = segue.destination as? StudentViewController
+//
+//                vc?.email = EmailTextField
+//
+//                self.navigationController?.pushViewController(nextvc, animated: true)
+//            }
+          
+            
+//        }
+     
     }
     
     func numberOfComponents(in pickerView: UIPickerView ) -> Int
@@ -91,11 +118,22 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         } else {
             print("Email or password is empty")
         }
+        
+        let defaults = UserDefaults.standard
+        if let array1 = EmailTextField.text, let array2 = TeacherLabel.text, let array3 = PeriodLabel.text
+        {
+            let array = [array1, array2, array3]
+            defaults.set(array, forKey: "Array")
+            
+            
+        }
+        
     }
     
     /// - Authors: Arslan Khan
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nvc = segue.destination as! StudentViewController
+        
         nvc.email = EmailTextField.text!
         nvc.period = PeriodLabel.text!
         nvc.teacher = TeacherLabel.text!
