@@ -107,36 +107,6 @@
             </objects>
             <point key="canvasLocation" x="2824.8046875" y="103.90625"/>
         </scene>
-        <!--Location View Controller-->
-        <scene sceneID="2yH-dt-p2I">
-            <objects>
-                <viewController id="QQ1-Zk-efh" customClass="LocationViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZWW-M1-gVT">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="CIc-Ka-DKE"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sAX-ub-GkJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="265" y="912"/>
-        </scene>
-        <!--Student View Controller-->
-        <scene sceneID="ZzM-gY-0kd">
-            <objects>
-                <viewController id="q7S-BD-93a" customClass="StudentViewController" customModule="Check_In" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nTk-FL-tbC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="qtW-bj-GAh"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tda-Ls-NIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="913" y="912"/>
-        </scene>
         <!--CHECK IN FAM-->
         <scene sceneID="TPH-oN-23V">
             <objects>
@@ -213,6 +183,17 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ButtonsPage" translatesAutoresizingMaskIntoConstraints="NO" id="pXU-Gf-cI7">
                                 <rect key="frame" x="0.0" y="13" width="1024" height="768"/>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Other Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PCE-jm-PWa">
+                                <rect key="frame" x="426" y="698" width="198" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n3Y-aO-gDj">
+                                <rect key="frame" x="431" y="738" width="162" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Confirm other Location "/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -225,6 +206,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="CHECK IN FAM" id="RBH-vv-4ui"/>
                     <connections>
+                        <outlet property="Other" destination="pXU-Gf-cI7" id="78K-Wg-u5X"/>
                         <outlet property="commonsOutlet" destination="v8R-Hm-vLk" id="GGp-9v-1qo"/>
                         <outlet property="klcOutlet" destination="2Lh-HY-Mpe" id="hu4-vd-5Ew"/>
                         <outlet property="locationTextField" destination="a6T-f6-eQx" id="g9o-dd-bJY"/>

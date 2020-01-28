@@ -19,6 +19,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var commonsOutlet: UIButton!
     @IBOutlet weak var lunchOutlet: UIButton!
     @IBOutlet weak var msrOutlet: UIButton!
+    @IBOutlet weak var Other: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +51,32 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: "Your location", message: selected, preferredStyle: .alert)
         let confirmButton =  UIAlertAction(title: "Confirm Location", style: .default) { (action) in
             //send location to Firebase
-            let db = Firestore.firestore()
-            db.collection("Students").addDocument(data: ["Email" : self.email, "Location" : selected, "Teacher" : self.teacher, "Period" : self.period])
+         
             
         }
         let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(confirmButton)
         alert.addAction(declineButton)
         present(alert, animated: true, completion: nil)
+    }
+    @IBAction func Confirm(_ sender: Any)
+    {let db = Firestore.firestore()
+        let lol = self.Other.text
+       
+         db.collection("Students").addDocument(data: ["Email" : self.email, "Location" : lol, "Teacher" : self.teacher, "Period" : self.period])
+            
+            let alert = UIAlertController(title: "Is this where you'll Like to go? ", message: "\(lol)", preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Nope", style: .cancel , handler: nil)
+            let confirmbutton = UIAlertAction(title: "Confirm", style: .default) { (action) in
+                
+                
+                
+               
+            
+        }
+        alert.addAction(dismiss)
+                       alert.addAction(confirmbutton)
+                       present(alert, animated: true, completion: nil)
+        
     }
 }
