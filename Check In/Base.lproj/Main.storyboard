@@ -180,10 +180,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ButtonsPage" translatesAutoresizingMaskIntoConstraints="NO" id="pXU-Gf-cI7">
-                                <rect key="frame" x="0.0" y="13" width="1024" height="768"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Other Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PCE-jm-PWa">
                                 <rect key="frame" x="426" y="698" width="198" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -198,13 +194,21 @@
                                     <action selector="Confirm:" destination="KQ5-Rv-xNw" eventType="touchUpInside" id="aUr-Px-M0S"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen" translatesAutoresizingMaskIntoConstraints="NO" id="pXU-Gf-cI7">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="pXU-Gf-cI7" secondAttribute="bottom" id="3Ly-wl-WOF"/>
                             <constraint firstAttribute="trailing" secondItem="pXU-Gf-cI7" secondAttribute="trailing" id="4Ci-Yn-hfi"/>
                             <constraint firstItem="pXU-Gf-cI7" firstAttribute="top" secondItem="BP8-0T-5CR" secondAttribute="top" id="9wN-aQ-Mcc"/>
+                            <constraint firstItem="pXU-Gf-cI7" firstAttribute="leading" secondItem="BP8-0T-5CR" secondAttribute="leading" id="GIZ-IE-56I"/>
+                            <constraint firstAttribute="trailing" secondItem="pXU-Gf-cI7" secondAttribute="trailing" id="KKg-KQ-T6N"/>
+                            <constraint firstItem="pXU-Gf-cI7" firstAttribute="top" secondItem="BP8-0T-5CR" secondAttribute="top" id="Z9I-fd-1wH"/>
                             <constraint firstItem="pXU-Gf-cI7" firstAttribute="leading" secondItem="BP8-0T-5CR" secondAttribute="leading" id="jrK-tb-z5b"/>
+                            <constraint firstAttribute="bottom" secondItem="pXU-Gf-cI7" secondAttribute="bottom" id="v5q-W3-tOS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NMn-5r-be7"/>
                     </view>
@@ -242,6 +246,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ButtonsPage" width="794" height="614"/>
+        <image name="Screen" width="1676" height="1226"/>
     </resources>
 </document>
