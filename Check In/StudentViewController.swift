@@ -25,6 +25,8 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(email, 5)
+        
+       
     }
 
     @IBAction func klcButton(_ sender: UIButton) {
