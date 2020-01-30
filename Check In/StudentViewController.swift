@@ -14,7 +14,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     var teacher = ""
     var period = ""
 
-    @IBOutlet weak var locationTextField: UITextField!
+ 
     @IBOutlet weak var klcOutlet: UIButton!
     @IBOutlet weak var commonsOutlet: UIButton!
     @IBOutlet weak var lunchOutlet: UIButton!
@@ -65,7 +65,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
           
    
         let alert = UIAlertController(title: "Is this where you'll Like to go? ", message: "\(lol)", preferredStyle: .alert)
-            let dismiss = UIAlertAction(title: "Nope", style: .cancel , handler: nil)
+            let dismiss = UIAlertAction(title: "No", style: .cancel , handler: nil)
             let confirmbutton = UIAlertAction(title: "Confirm", style: .default) { (action) in
               let db = Firestore.firestore()
                

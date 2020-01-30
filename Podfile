@@ -8,7 +8,7 @@ target 'Check In' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   pod 'MaterialComponents'  # https://github.com/material-components/material-components-ios
-  
+ 
   # Dan was here
   # Moe was here
 
