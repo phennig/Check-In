@@ -21,9 +21,12 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var msrOutlet: UIButton!
     @IBOutlet weak var Other: UITextField!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(email, 5)
+        
+       
     }
 
     @IBAction func klcButton(_ sender: UIButton) {
@@ -57,17 +60,16 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(declineButton)
         present(alert, animated: true, completion: nil)
     }
-    @IBAction func Confirm(_ sender: Any){
-        let db = Firestore.firestore()
-        var lol = self.Other.text
-       
-         db.collection("Students").addDocument(data: ["Email" : self.email, "Location" : lol, "Teacher" : self.teacher, "Period" : self.period])
-            
-            let alert = UIAlertController(title: "Is this where you'll Like to go? ", message: "\(lol)", preferredStyle: .alert)
+    @IBAction func Confirm(_ sender: UIButton){
+        var lol = Other.text
+          
+   
+        let alert = UIAlertController(title: "Is this where you'll Like to go? ", message: "\(lol)", preferredStyle: .alert)
             let dismiss = UIAlertAction(title: "Nope", style: .cancel , handler: nil)
             let confirmbutton = UIAlertAction(title: "Confirm", style: .default) { (action) in
-                lol = ""
-                
+              let db = Firestore.firestore()
+               
+                db.collection("Students").addDocument(data: ["Email" : self.email, "Location" : lol, "Teacher" :self.teacher, "Period" : self.period])
         }
             alert.addAction(dismiss)
             alert.addAction(confirmbutton)
