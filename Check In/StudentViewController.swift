@@ -54,6 +54,10 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
         let alert = UIAlertController(title: "Your selected location:", message: selected, preferredStyle: .alert)
         let confirmButton =  UIAlertAction(title: "Confirm Location", style: .default) { (action) in
             //send location to Firebase
+            
+            let db = Firestore.firestore()
+                         
+                          db.collection("Student").addDocument(data: ["Email" : self.email, "Location" : selected, "Teacher" :self.teacher, "Period" : self.period])
         }
         let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(confirmButton)
@@ -69,7 +73,9 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
             let confirmbutton = UIAlertAction(title: "Confirm", style: .default) { (action) in
               let db = Firestore.firestore()
                
-                db.collection("Students").addDocument(data: ["Email" : self.email, "Location" : lol, "Teacher" :self.teacher, "Period" : self.period])
+                db.collection("Student").addDocument(data: ["Email" : self.email, "Location" : lol, "Teacher" :self.teacher, "Period" : self.period])
+                
+                
         }
             alert.addAction(dismiss)
             alert.addAction(confirmbutton)
