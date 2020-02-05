@@ -42,22 +42,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         print(Array<Any>.self).self
         //Work in progress
-//        if TeacherLabel.text != "", PeriodLabel.text != "", EmailTextField.text != ""
-//        {
-//
-//            if let nextvc = self.storyboard?.instantiateViewController(withIdentifier:
-//            "paper")
-//            {
-//                let segue = UIStoryboardSegue()
-//                let vc = segue.destination as? StudentViewController
-//
-//                vc?.email = EmailTextField
-//
-//                self.navigationController?.pushViewController(nextvc, animated: true)
-//            }
-          
-            
-//        }
+
      
     }
     
