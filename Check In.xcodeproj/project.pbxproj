@@ -10,7 +10,7 @@
 		2E60BA7A23AA8A1400369031 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E60BA7923AA8A1400369031 /* StudentViewController.swift */; };
 		2E65295423AA8DC6004B3F72 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E65295323AA8DC6004B3F72 /* TeacherViewController.swift */; };
 		2E73164A23AA8CF50068273E /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E73164923AA8CF50068273E /* LocationViewController.swift */; };
-		58874B2B23E9C30C0005B62E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58874B2A23E9C30C0005B62E /* GoogleService-Info.plist */; };
+		58874B2F23E9D4160005B62E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58874B2E23E9D4160005B62E /* GoogleService-Info.plist */; };
 		58B26EE423A92DF300912270 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B26EE323A92DF300912270 /* AppDelegate.swift */; };
 		58B26EE623A92DF300912270 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B26EE523A92DF300912270 /* SceneDelegate.swift */; };
 		58B26EE823A92DF300912270 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B26EE723A92DF300912270 /* ViewController.swift */; };
@@ -26,7 +26,7 @@
 		2E73164923AA8CF50068273E /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		2FCEC132C4B95C5D7330B683 /* Pods-Check In.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Check In.release.xcconfig"; path = "Target Support Files/Pods-Check In/Pods-Check In.release.xcconfig"; sourceTree = "<group>"; };
 		5356D9B432925AACEA28ED97 /* Pods_Check_In.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Check_In.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		58874B2A23E9C30C0005B62E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		58874B2E23E9D4160005B62E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		58B26EE023A92DF300912270 /* Check In.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Check In.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B26EE323A92DF300912270 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58B26EE523A92DF300912270 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 				58B26EEC23A92DF600912270 /* Assets.xcassets */,
 				58B26EEE23A92DF600912270 /* LaunchScreen.storyboard */,
 				58B26EF123A92DF600912270 /* Info.plist */,
-				58874B2A23E9C30C0005B62E /* GoogleService-Info.plist */,
+				58874B2E23E9D4160005B62E /* GoogleService-Info.plist */,
 			);
 			path = "Check In";
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58B26EF023A92DF600912270 /* LaunchScreen.storyboard in Resources */,
-				58874B2B23E9C30C0005B62E /* GoogleService-Info.plist in Resources */,
+				58874B2F23E9D4160005B62E /* GoogleService-Info.plist in Resources */,
 				58B26EED23A92DF600912270 /* Assets.xcassets in Resources */,
 				58B26EEB23A92DF300912270 /* Main.storyboard in Resources */,
 			);

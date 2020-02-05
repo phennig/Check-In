@@ -7,25 +7,21 @@
 //
 
 import UIKit
-import FirebaseFirestore
+import Firebase
 
 class StudentViewController: UIViewController, UITextFieldDelegate {
     var email : Any?
     var teacher = ""
     var period = ""
 
- 
     @IBOutlet weak var klcOutlet: UIButton!
     @IBOutlet weak var commonsOutlet: UIButton!
     @IBOutlet weak var lunchOutlet: UIButton!
     @IBOutlet weak var msrOutlet: UIButton!
     @IBOutlet weak var Other: UITextField!
     
-    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        print(email, 5)
-        
+        super.viewDidLoad()        
        
     }
 

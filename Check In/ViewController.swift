@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseFirestore
+import Firebase
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
@@ -61,20 +61,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
      
     }
     
-    func numberOfComponents(in pickerView: UIPickerView ) -> Int
-    {
+    func numberOfComponents(in pickerView: UIPickerView ) -> Int{
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         var lol : Any?
         
-        if pickerView == TeacherPicker
-        {
+        if pickerView == TeacherPicker{
             lol = teachers[row]
         }
-        if pickerView == PeriodoPicker
-        {
+        if pickerView == PeriodoPicker{
             lol = period[row]
         }
         
