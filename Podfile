@@ -4,10 +4,11 @@
 target 'Check In' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
-  pod 'Firebase/Core'       # https://github.com/firebase/firebase-ios-sdk
+  pod 'Firebase/Core'       
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
-  pod 'MaterialComponents'  # https://github.com/material-components/material-components-ios
+  pod 'MaterialComponents'
+  pod 'Firebase/Database'
  
   # Dan was here
   # Moe was here

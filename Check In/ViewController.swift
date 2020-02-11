@@ -22,7 +22,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var PeriodLabel: UILabel!
     let period = ["1", "2", "3", "4", "5", "6", "7", "8"]
     let teachers = ["Hennig", "Reidy", "Kim", "Page"]
-    override func viewDidLoad() {
+  
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         TeacherPicker.dataSource = self
@@ -46,36 +48,41 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
      
     }
     
-    func numberOfComponents(in pickerView: UIPickerView ) -> Int{
+    func numberOfComponents(in pickerView: UIPickerView ) -> Int
+    {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        var lol : Any?
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?
+    {
+        var Selected : Any?
         
-        if pickerView == TeacherPicker{
-            lol = teachers[row]
-        }
-        if pickerView == PeriodoPicker{
-            lol = period[row]
-        }
-        
-        return lol as! String
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-         
-        var lol : Any?
         if pickerView == TeacherPicker
         {
-            lol = teachers.count
+            Selected = teachers[row]
         }
         if pickerView == PeriodoPicker
         {
-            lol =  period.count
+            Selected = period[row]
         }
         
-        return lol as! Int
+        return Selected as! String
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
+    {
+         
+        var NumberOf : Any?
+        if pickerView == TeacherPicker
+        {
+            NumberOf = teachers.count
+        }
+        if pickerView == PeriodoPicker
+        {
+            NumberOf =  period.count
+        }
+        
+        return NumberOf as! Int
         
     }
     
@@ -93,21 +100,24 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     /// - Authors: Arslan Khan, Muhammet Balsoy
-    @IBAction func LogInButton(_ sender: UIButton) {
+    @IBAction func LogInButton(_ sender: UIButton)
+    {
         // Fixed it for ya – Muhammet
-        if let email = EmailTextField.text, let password = PasswordTextField.text {
+        if let email = EmailTextField.text, let password = PasswordTextField.text
+        {
             print(email, password)
-        } else {
+        }
+        else
+        {
             print("Email or password is empty")
         }
         
         let defaults = UserDefaults.standard
+      
         if let array1 = EmailTextField.text, let array2 = TeacherLabel.text, let array3 = PeriodLabel.text
         {
             let array = [array1, array2, array3]
             defaults.set(array, forKey: "Array")
-            
-            
         }
         
     }
@@ -125,3 +135,4 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 
         // Dan : - )
         // Moe : - )
+        // RC ; - )
