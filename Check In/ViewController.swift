@@ -102,23 +102,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     /// - Authors: Arslan Khan, Muhammet Balsoy
     @IBAction func LogInButton(_ sender: UIButton)
     {
-        // Fixed it for ya – Muhammet
-        if let email = EmailTextField.text, let password = PasswordTextField.text
-        {
-            print(email, password)
-        }
-        else
-        {
-            print("Email or password is empty")
-        }
-        
-        let defaults = UserDefaults.standard
-      
-        if let array1 = EmailTextField.text, let array2 = TeacherLabel.text, let array3 = PeriodLabel.text
-        {
-            let array = [array1, array2, array3]
-            defaults.set(array, forKey: "Array")
-        }
         
     }
     
