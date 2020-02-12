@@ -16,48 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dom-XO-NIa">
-                                <rect key="frame" x="40" y="475" width="1000" height="281"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8C-bb-H9Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="1000" height="23.5"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter school email address" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="2PX-sm-vw2">
-                                        <rect key="frame" x="0.0" y="43.5" width="1000" height="34"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddr-a8-hId">
-                                        <rect key="frame" x="0.0" y="97.5" width="1000" height="23.5"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="School password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MGY-le-vsG">
-                                        <rect key="frame" x="0.0" y="141" width="1000" height="34"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGw-p1-N5R">
-                                        <rect key="frame" x="0.0" y="195" width="1000" height="36"/>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
-                                        <state key="normal" title="Login"/>
-                                        <connections>
-                                            <action selector="LogInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K5v-vW-S6I"/>
-                                            <segue destination="KQ5-Rv-xNw" kind="show" id="Txj-fg-yJP"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnP-nd-7zS">
-                                        <rect key="frame" x="0.0" y="251" width="1000" height="30"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="MGY-le-vsG" firstAttribute="top" secondItem="ddr-a8-hId" secondAttribute="bottom" constant="100" id="kgh-Xy-8VI"/>
-                                </constraints>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfN-RS-uUX">
                                 <rect key="frame" x="168" y="200" width="192" height="43"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -88,6 +46,34 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dom-XO-NIa">
+                                <rect key="frame" x="20" y="463" width="1000" height="183.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8C-bb-H9Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="1000" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter school email address" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="2PX-sm-vw2">
+                                        <rect key="frame" x="0.0" y="43.5" width="1000" height="34"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IGw-p1-N5R">
+                                        <rect key="frame" x="0.0" y="97.5" width="1000" height="36"/>
+                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="20"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="LogInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K5v-vW-S6I"/>
+                                            <segue destination="KQ5-Rv-xNw" kind="show" id="Txj-fg-yJP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnP-nd-7zS">
+                                        <rect key="frame" x="0.0" y="153.5" width="1000" height="30"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -100,7 +86,6 @@
                     <navigationItem key="navigationItem" title="Log in" id="ubR-S4-Vrt"/>
                     <connections>
                         <outlet property="EmailTextField" destination="2PX-sm-vw2" id="6sx-Ro-FH6"/>
-                        <outlet property="PasswordTextField" destination="MGY-le-vsG" id="dCD-43-XrD"/>
                         <outlet property="PeriodLabel" destination="Fr6-ux-p9A" id="Rry-4T-hJm"/>
                         <outlet property="PeriodoPicker" destination="Gt3-XH-RQ9" id="nCt-xt-CX8"/>
                         <outlet property="TeacherLabel" destination="rfN-RS-uUX" id="miK-hi-GJq"/>
