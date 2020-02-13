@@ -9,11 +9,8 @@
 import UIKit
 import Firebase
 import GoogleSignIn
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, GIDSignInDelegate, UIApplicationDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!)
-    {
-        <#code#>
-    }
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+
     
     
     // Later use camelcased variables plz
@@ -24,6 +21,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var TeacherPicker: UIPickerView!
     @IBOutlet weak var PeriodoPicker: UIPickerView!
     @IBOutlet weak var PeriodLabel: UILabel!
+    @IBOutlet weak var signInButton: GIDSignInButton!
     let period = ["1", "2", "3", "4", "5", "6", "7", "8"]
     let teachers = ["Hennig", "Reidy", "Kim", "Page"]
   
@@ -46,10 +44,12 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
             
         }
         
-        print(Array<Any>.self).self
+        
         //Work in progress
 
      
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+        GIDSignIn.sharedInstance().signIn()
     }
     
     func numberOfComponents(in pickerView: UIPickerView ) -> Int
@@ -103,13 +103,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
        
     }
     
-    /// - Authors: Arslan Khan, Muhammet Balsoy
-    @IBAction func LogInButton(_ sender: UIButton)
-    {
-        
-    }
-    
-    /// - Authors: Arslan Khan
+   
+
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nvc = segue.destination as! StudentViewController
         

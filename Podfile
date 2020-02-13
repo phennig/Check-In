@@ -9,7 +9,7 @@ target 'Check In' do
   pod 'Firebase/Firestore'
   pod 'MaterialComponents'
   pod 'Firebase/Database'
-  pod 'Firebase/Auth'
+  pod 'FirebaseAuth', '6.4.1'
   pod 'GoogleSignIn'
  
   # Dan was here

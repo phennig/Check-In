@@ -29,7 +29,6 @@
 #import <FirebaseCore/FIRLogger.h>
 #import <FirebaseCore/FIROptions.h>
 #import <GoogleUtilities/GULAppDelegateSwizzler.h>
-#import <GoogleUtilities/GULSceneDelegateSwizzler.h>
 #import <GoogleUtilities/GULAppEnvironmentUtil.h>
 
 #import "FIREmailPasswordAuthCredential.h"
@@ -385,8 +384,7 @@ static NSMutableDictionary *gKeychainServiceNameForAppName;
     UIApplication *application = [applicationClass sharedApplication];
 
     [GULAppDelegateSwizzler proxyOriginalDelegateIncludingAPNSMethods];
-    [GULSceneDelegateSwizzler proxyOriginalSceneDelegate];
-    #endif // TARGET_OS_IOS
+    #endif
 
     // Continue with the rest of initialization in the work thread.
     __weak FIRAuth *weakSelf = self;
@@ -441,12 +439,7 @@ static NSMutableDictionary *gKeychainServiceNameForAppName;
           appCredentialManager:strongSelf->_appCredentialManager];
 
       [GULAppDelegateSwizzler registerAppDelegateInterceptor:strongSelf];
-      #if ((TARGET_OS_IOS || TARGET_OS_TV) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= 130000))
-        if (@available(iOS 13, tvos 13, *)) {
-        [GULSceneDelegateSwizzler registerSceneDelegateInterceptor:strongSelf];
-      }
-      #endif // ((TARGET_OS_IOS || TARGET_OS_TV) && (__IPHONE_OS_VERSION_MAX_ALLOWED >= 130000))
-      #endif // TARGET_OS_IOS
+      #endif
     });
   }
   return self;
@@ -1331,9 +1324,6 @@ static NSMutableDictionary *gKeychainServiceNameForAppName;
 }
 
 #if TARGET_OS_IOS
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wunused-property-ivar"
-// The warning is ignored because we use the token manager to get the token, instead of using the ivar.
 - (nullable NSData *)APNSToken {
   __block NSData *result = nil;
   dispatch_sync(FIRAuthGlobalWorkQueue(), ^{
@@ -1341,7 +1331,6 @@ static NSMutableDictionary *gKeychainServiceNameForAppName;
   });
   return result;
 }
-#pragma clang diagnostic pop
 
 #pragma mark - UIApplicationDelegate
 

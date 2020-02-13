@@ -39,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dom-XO-NIa">
-                                <rect key="frame" x="20" y="463" width="1000" height="183.5"/>
+                                <rect key="frame" x="20" y="463" width="1000" height="133.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8C-bb-H9Q">
                                         <rect key="frame" x="0.0" y="0.0" width="1000" height="23.5"/>
@@ -61,9 +61,6 @@
                                             <segue destination="KQ5-Rv-xNw" kind="show" id="Txj-fg-yJP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnP-nd-7zS">
-                                        <rect key="frame" x="0.0" y="153.5" width="1000" height="30"/>
-                                    </button>
                                 </subviews>
                             </stackView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gt3-XH-RQ9">
@@ -74,6 +71,11 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="6bu-43-Hqf"/>
                                 </connections>
                             </pickerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1RJ-Ol-xXT" customClass="GIDSignInButton">
+                                <rect key="frame" x="420" y="643" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -90,6 +92,7 @@
                         <outlet property="PeriodoPicker" destination="Gt3-XH-RQ9" id="nCt-xt-CX8"/>
                         <outlet property="TeacherLabel" destination="rfN-RS-uUX" id="miK-hi-GJq"/>
                         <outlet property="TeacherPicker" destination="B2h-Um-qKR" id="mMK-O0-gUB"/>
+                        <outlet property="signInButton" destination="1RJ-Ol-xXT" id="PoL-hB-d4K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
