@@ -9,6 +9,8 @@ target 'Check In' do
   pod 'Firebase/Firestore'
   pod 'MaterialComponents'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  pod 'GoogleSignIn'
  
   # Dan was here
   # Moe was here

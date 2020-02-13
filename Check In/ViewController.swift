@@ -8,14 +8,18 @@
 
 import UIKit
 import Firebase
-
-class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+import GoogleSignIn
+class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, GIDSignInDelegate, UIApplicationDelegate {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!)
+    {
+        <#code#>
+    }
+    
     
     // Later use camelcased variables plz
     // no
     // yes
     @IBOutlet weak var EmailTextField: UITextField!
-    @IBOutlet weak var PasswordTextField: UITextField!
     @IBOutlet weak var TeacherLabel: UILabel!
     @IBOutlet weak var TeacherPicker: UIPickerView!
     @IBOutlet weak var PeriodoPicker: UIPickerView!
