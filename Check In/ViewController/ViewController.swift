@@ -10,21 +10,17 @@ import UIKit
 import Firebase
 import GoogleSignIn
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-
-    
-    
     // Later use camelcased variables plz
     // no
     // yes
-    @IBOutlet weak var EmailTextField: UITextField!
     @IBOutlet weak var TeacherLabel: UILabel!
     @IBOutlet weak var TeacherPicker: UIPickerView!
     @IBOutlet weak var PeriodoPicker: UIPickerView!
     @IBOutlet weak var PeriodLabel: UILabel!
-    @IBOutlet weak var signInButton: GIDSignInButton!
     let period = ["1", "2", "3", "4", "5", "6", "7", "8"]
     let teachers = ["Hennig", "Reidy", "Kim", "Page"]
-  
+    var Passingemail : Any?
+    var Passingname : Any?
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -38,18 +34,15 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
        
         let userDefaults = UserDefaults.standard
         if let array = userDefaults.array(forKey: "Array"){
-            EmailTextField.text = "\(array[0])"
-            TeacherLabel.text = "\(array[1])"
-            PeriodLabel.text = "\(array[2])"
             
+            TeacherLabel.text = "\(array[0])"
+            PeriodLabel.text = "\(array[1])"
+
         }
         
-        
-        //Work in progress
+        print(Passingemail,3)
 
-     
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance().signIn()
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView ) -> Int
@@ -104,12 +97,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
    
-
+    @IBAction func nextView(_ sender: UIButton)
+    {
+        
+    }
+    
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let nvc = segue.destination as! StudentViewController
         
-        nvc.email = EmailTextField.text!
+        nvc.email = Passingemail
+        nvc.name = Passingname
         nvc.period = PeriodLabel.text!
         nvc.teacher = TeacherLabel.text!
     }

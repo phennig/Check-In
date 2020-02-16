@@ -11,6 +11,7 @@ import Firebase
 import FirebaseDatabase
 class StudentViewController: UIViewController, UITextFieldDelegate {
     var email : Any?
+    var name : Any?
     var teacher = ""
     var period = ""
 
@@ -23,7 +24,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
      
-       
+       print(email)
     }
 
     @IBAction func klcButton(_ sender: UIButton) {
@@ -54,7 +55,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
             //send location to Firebase
             
         let db = Firestore.firestore()
-            db.collection("Student").document(self.email as! String).setData(["Email" : self.email, "Location" : selected, "Teacher" :self.teacher, "Period" : self.period])
+            db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name ,"Location" : selected, "Teacher" :self.teacher, "Period" : self.period])
          
         }
         let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -70,7 +71,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
             let confirmbutton = UIAlertAction(title: "Confirm", style: .default)
             { (action) in
             let db = Firestore.firestore()
-             db.collection("Student").document(self.email as! String).setData(["Email" : self.email, "Location" : OtherLocation, "Teacher" :self.teacher, "Period" : self.period])
+                db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name, "Location" : OtherLocation, "Teacher" :self.teacher, "Period" : self.period])
                 
             
                 
