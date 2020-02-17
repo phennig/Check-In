@@ -12,6 +12,7 @@ import GoogleSignIn
 class SignInViewController: UIViewController
 {
 
+    @IBOutlet weak var Background: UIView!
     @IBOutlet weak var signInButton: GIDSignInButton!
     var Studentname = ""
     var Studentemail = ""
@@ -36,7 +37,8 @@ class SignInViewController: UIViewController
                 
         }
        
-        
+        Background.layer.cornerRadius = 20
+     
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -47,7 +49,5 @@ class SignInViewController: UIViewController
         
     }
     
-
-
 
 }

@@ -13,6 +13,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // Later use camelcased variables plz
     // no
     // yes
+    
+    
+    @IBOutlet weak var PeriodBack: UIView!
+    @IBOutlet weak var Back: UIView!
     @IBOutlet weak var TeacherLabel: UILabel!
     @IBOutlet weak var TeacherPicker: UIPickerView!
     @IBOutlet weak var PeriodoPicker: UIPickerView!
@@ -42,7 +46,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         print(Passingemail,3)
 
-        
+        PeriodBack.layer.cornerRadius = 20
+
+        Back.layer.cornerRadius = 20
     }
     
     func numberOfComponents(in pickerView: UIPickerView ) -> Int

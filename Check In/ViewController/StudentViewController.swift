@@ -14,7 +14,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     var name : Any?
     var teacher = ""
     var period = ""
-
+    var userTime : Any?
     @IBOutlet weak var klcOutlet: UIButton!
     @IBOutlet weak var commonsOutlet: UIButton!
     @IBOutlet weak var lunchOutlet: UIButton!
@@ -25,6 +25,20 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     {
         super.viewDidLoad()
         title = name as! String
+        
+        let currentDateTime = Date()
+
+        // initialize the date formatter and set the style
+        let formatter = DateFormatter()
+        formatter.timeStyle = .medium
+        formatter.dateStyle = .long
+
+        // get the date time String from the date object
+        formatter.string(from: currentDateTime)
+        formatter.timeStyle = .short
+        formatter.dateStyle = .short
+        userTime = formatter.string(from: currentDateTime)
+
     }
 
     @IBAction func klcButton(_ sender: UIButton) {
@@ -50,13 +64,21 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     
     func locationAlert(selected:String)
     {
-        let alert = UIAlertController(title: "Your selected location:", message: selected, preferredStyle: .alert)
+         let alert = UIAlertController(title: "Your selected location:", message: selected, preferredStyle: .alert)
         let confirmButton =  UIAlertAction(title: "Confirm Location", style: .default) { (action) in
             //send location to Firebase
-            
-        let db = Firestore.firestore()
-            db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name ,"Location" : selected, "Teacher" :self.teacher, "Period" : self.period])
-         
+            if self.period == "" || self.teacher == ""
+            {
+                let ErrorAlert = UIAlertController(title: "Failed to insert", message: "Period or Teacher", preferredStyle: .alert)
+                let decline = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                ErrorAlert.addAction(decline)
+                self.present(ErrorAlert, animated: true, completion: nil)
+            }
+            else
+            {
+                let db = Firestore.firestore()
+                db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name ,"Location" : selected, "Teacher" :self.teacher, "Period" : self.period, "Date submitted" : self.userTime])
+            }
         }
         let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(confirmButton)
@@ -70,9 +92,18 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
             let dismiss = UIAlertAction(title: "No", style: .cancel , handler: nil)
             let confirmbutton = UIAlertAction(title: "Confirm", style: .default)
             { (action) in
-            let db = Firestore.firestore()
-                db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name, "Location" : OtherLocation, "Teacher" :self.teacher, "Period" : self.period])
-                
+                if self.period == "" || self.teacher == ""
+                {
+                    let ErrorAlert = UIAlertController(title: "Failed to insert", message: "Period or Teacher", preferredStyle: .alert)
+                    let decline = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+                    ErrorAlert.addAction(decline)
+                    self.present(ErrorAlert, animated: true, completion: nil)
+                }
+                else
+                {
+                    let db = Firestore.firestore()
+                    db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name, "Location" : OtherLocation, "Teacher" :self.teacher, "Period" : self.period, "Date submitted" : self.userTime])
+                }
             
                 
     
