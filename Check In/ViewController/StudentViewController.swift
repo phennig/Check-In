@@ -21,10 +21,10 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var msrOutlet: UIButton!
     @IBOutlet weak var Other: UITextField!
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-     
-       print(email)
+        title = name as! String
     }
 
     @IBAction func klcButton(_ sender: UIButton) {

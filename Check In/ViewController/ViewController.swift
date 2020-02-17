@@ -17,8 +17,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var TeacherPicker: UIPickerView!
     @IBOutlet weak var PeriodoPicker: UIPickerView!
     @IBOutlet weak var PeriodLabel: UILabel!
-    let period = ["1", "2", "3", "4", "5", "6", "7", "8"]
-    let teachers = ["Hennig", "Reidy", "Kim", "Page"]
+    let userDefaults = UserDefaults.standard
+    let period = [" ","1", "2", "3", "4", "5", "6", "7", "8"]
+    let teachers = [" ","Hennig", "Reidy", "Kim", "Page"]
     var Passingemail : Any?
     var Passingname : Any?
     override func viewDidLoad()
@@ -32,7 +33,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         TeacherLabel.text = ""
         PeriodLabel.text = ""
        
-        let userDefaults = UserDefaults.standard
         if let array = userDefaults.array(forKey: "Array"){
             
             TeacherLabel.text = "\(array[0])"
@@ -99,7 +99,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
    
     @IBAction func nextView(_ sender: UIButton)
     {
-        
+       
     }
     
  

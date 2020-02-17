@@ -26,15 +26,16 @@ class SignInViewController: UIViewController
 
         
         let user = Auth.auth().currentUser
-              if let user = user
-              {
+        if let user = user
+        {
                   
-                Studentname = user.displayName as! String
-                Studentemail = user.email as! String
-                print(Studentemail)
-                self.performSegue(withIdentifier: "GO", sender: self)
+            Studentname = user.displayName as! String
+            Studentemail = user.email as! String
+            print(Studentemail)
+            self.performSegue(withIdentifier: "GO", sender: self)
                 
-              }
+        }
+       
         
     }
 
@@ -45,5 +46,8 @@ class SignInViewController: UIViewController
         nvc.Passingname = Studentname
         
     }
+    
+
+
 
 }
