@@ -14,7 +14,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // no
     // yes
     
-    
+ 
     @IBOutlet weak var PeriodBack: UIView!
     @IBOutlet weak var Back: UIView!
     @IBOutlet weak var TeacherLabel: UILabel!
