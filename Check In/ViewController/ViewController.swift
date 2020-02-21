@@ -23,7 +23,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var PeriodLabel: UILabel!
     let userDefaults = UserDefaults.standard
     let period = [" ","1", "2", "3", "4", "5", "6", "7", "8"]
-    let teachers = [" ","Hennig", "Reidy", "Kim", "Page"]
+    let teachers = [" ", "Hennig","Izenstark", "Kim","Page", "Reidy"]
     var Passingemail : Any?
     var Passingname : Any?
     override func viewDidLoad()
