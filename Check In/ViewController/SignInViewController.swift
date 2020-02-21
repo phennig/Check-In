@@ -39,6 +39,7 @@ class SignInViewController: UIViewController
        
         Background.layer.cornerRadius = 20
      
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
@@ -48,6 +49,7 @@ class SignInViewController: UIViewController
         nvc.Passingname = Studentname
         
     }
+    
     
 
 }

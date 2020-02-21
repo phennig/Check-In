@@ -23,7 +23,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.446509730246-ftd8ej28v3dd4iubcl3669378s6g1rhh</string>
+				<string>com.googleusercontent.apps.446509730246-07shfnme6t5ehcnscobl5rknoaqbftil</string>
 			</array>
 		</dict>
 		<dict>
@@ -31,7 +31,15 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.phs.Check-Inn</string>
+				<string>com.phs.Check-In-Teacher-</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.446509730246-07shfnme6t5ehcnscobl5rknoaqbftil</string>
 			</array>
 		</dict>
 	</array>
