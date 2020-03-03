@@ -49,7 +49,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         PeriodBack.layer.cornerRadius = 20
 
         Back.layer.cornerRadius = 20
+        
     }
+                    
     
     func numberOfComponents(in pickerView: UIPickerView ) -> Int
     {

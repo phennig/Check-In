@@ -24,7 +24,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        title = name as! String
+        
         
         let currentDateTime = Date()
 
@@ -78,6 +78,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
             {
                 let db = Firestore.firestore()
                 db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name ,"Location" : selected, "Teacher" :self.teacher, "Period" : self.period, "Date submitted" : self.userTime])
+                self.Other.text = nil
             }
         }
         let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -88,7 +89,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     @IBAction func Confirm(_ sender: UIButton)
     {
             var OtherLocation = Other.text!
-            let alert = UIAlertController(title: "Is this where you'll Like to go? ", message: "\(OtherLocation)", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Confirm Location:", message: "\(OtherLocation)", preferredStyle: .alert)
             let dismiss = UIAlertAction(title: "No", style: .cancel , handler: nil)
             let confirmbutton = UIAlertAction(title: "Confirm", style: .default)
             { (action) in
@@ -104,7 +105,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
                     let db = Firestore.firestore()
                     db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name, "Location" : OtherLocation, "Teacher" :self.teacher, "Period" : self.period, "Date submitted" : self.userTime])
                 }
-            
+                self.Other.text = nil
                 
     
             }
