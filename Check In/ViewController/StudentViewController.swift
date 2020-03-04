@@ -79,7 +79,9 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
                 let db = Firestore.firestore()
                 db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name ,"Location" : selected, "Teacher" :self.teacher, "Period" : self.period, "Date submitted" : self.userTime])
                 self.Other.text = nil
+                self.dismiss(animated: true, completion: nil)
             }
+            
         }
         let declineButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(confirmButton)
@@ -104,6 +106,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
                 {
                     let db = Firestore.firestore()
                     db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name, "Location" : OtherLocation, "Teacher" :self.teacher, "Period" : self.period, "Date submitted" : self.userTime])
+                     self.dismiss(animated: true, completion: nil)
                 }
                 self.Other.text = nil
                 
