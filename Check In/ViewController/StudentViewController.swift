@@ -92,7 +92,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     {
             var OtherLocation = Other.text!
             let alert = UIAlertController(title: "Confirm Location:", message: "\(OtherLocation)", preferredStyle: .alert)
-            let dismiss = UIAlertAction(title: "No", style: .cancel , handler: nil)
+            let dismiss = UIAlertAction(title: "Cancel", style: .cancel , handler: nil)
             let confirmbutton = UIAlertAction(title: "Confirm", style: .default)
             { (action) in
                 if self.period == "" || self.teacher == ""

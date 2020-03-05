@@ -14,12 +14,13 @@ class SignInViewController: UIViewController
 
     @IBOutlet weak var Background: UIView!
     @IBOutlet weak var signInButton: GIDSignInButton!
+    @IBOutlet weak var Next: UIButton!
     var Studentname = ""
     var Studentemail = ""
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+      //  Next.isHidden = true
         GIDSignIn.sharedInstance()?.presentingViewController = self
         GIDSignIn.sharedInstance().signIn()
         
@@ -33,7 +34,7 @@ class SignInViewController: UIViewController
             Studentname = user.displayName as! String
             Studentemail = user.email as! String
             print(Studentemail)
-            self.performSegue(withIdentifier: "GO", sender: self)
+          //  self.performSegue(withIdentifier: "GO", sender: self)
                 
         }
        
@@ -41,7 +42,11 @@ class SignInViewController: UIViewController
      
         
     }
-
+    @IBAction func NextButton(_ sender: UIButton)
+    {
+  
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
         let nvc = segue.destination as! ViewController
