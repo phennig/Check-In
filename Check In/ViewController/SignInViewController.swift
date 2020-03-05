@@ -34,12 +34,13 @@ class SignInViewController: UIViewController
             Studentname = user.displayName as! String
             Studentemail = user.email as! String
             print(Studentemail)
-          //  self.performSegue(withIdentifier: "GO", sender: self)
+         
                 
         }
        
         Background.layer.cornerRadius = 20
      
+          performSegue(withIdentifier: "GO", sender: self)
         
     }
     @IBAction func NextButton(_ sender: UIButton)

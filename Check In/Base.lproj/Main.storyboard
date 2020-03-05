@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wc8-ah-ITQ">
     <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -45,7 +45,7 @@
                                         </state>
                                         <connections>
                                             <action selector="NextButton:" destination="jmp-ue-4BP" eventType="touchUpInside" id="a1Y-IK-Sw2"/>
-                                            <segue destination="BYZ-38-t0r" kind="presentation" modalPresentationStyle="fullScreen" id="wC6-LW-cIH"/>
+                                            <segue destination="BYZ-38-t0r" kind="presentation" identifier="GO" destinationCreationSelector="GO" modalPresentationStyle="fullScreen" id="wC6-LW-cIH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -64,7 +64,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1o-sj-w0f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2165" y="103.7037037037037"/>
+            <point key="canvasLocation" x="2882.7777777777778" y="103.7037037037037"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -118,7 +118,7 @@
                                 <state key="normal" title="Confirm"/>
                                 <connections>
                                     <action selector="nextView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hvi-Ru-CNp"/>
-                                    <segue destination="KQ5-Rv-xNw" kind="modal" destinationCreationSelector="Forward" modalPresentationStyle="fullScreen" id="9cx-Nh-f8d"/>
+                                    <segue destination="KQ5-Rv-xNw" kind="modal" identifier="GO" destinationCreationSelector="Forward" modalPresentationStyle="fullScreen" id="9cx-Nh-f8d"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="511-ir-pDT">
@@ -167,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2824.4444444444443" y="103.7037037037037"/>
+            <point key="canvasLocation" x="3542.2222222222222" y="103.7037037037037"/>
         </scene>
         <!--Student View Controller-->
         <scene sceneID="TPH-oN-23V">
@@ -270,7 +270,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nJC-Hu-L1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3581" y="104"/>
+            <point key="canvasLocation" x="4298.333333333333" y="103.7037037037037"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iX4-b2-GOH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Wc8-ah-ITQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8Ah-kF-hah">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="50"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jmp-ue-4BP" kind="relationship" relationship="rootViewController" id="REH-nh-Oag"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BVE-gR-7rg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2165" y="103.7037037037037"/>
         </scene>
     </scenes>
     <resources>
