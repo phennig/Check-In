@@ -21,7 +21,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var TeacherPicker: UIPickerView!
     @IBOutlet weak var PeriodoPicker: UIPickerView!
     @IBOutlet weak var PeriodLabel: UILabel!
-    let userDefaults = UserDefaults.standard
+   
     let period = [" ","1", "2", "3", "4", "5", "6", "7", "8"]
     let teachers = [" ", "Hennig","Izenstark", "Kim","Page", "Reidy"]
     var Passingemail : Any?
@@ -37,20 +37,18 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         TeacherLabel.text = ""
         PeriodLabel.text = ""
        
-        if let array = userDefaults.array(forKey: "Array"){
-            
-            TeacherLabel.text = "\(array[0])"
-            PeriodLabel.text = "\(array[1])"
 
-        }
-        
         print(Passingemail,3)
 
         PeriodBack.layer.cornerRadius = 20
 
         Back.layer.cornerRadius = 20
         
+
     }
+    
+    
+    
                     
     
     func numberOfComponents(in pickerView: UIPickerView ) -> Int

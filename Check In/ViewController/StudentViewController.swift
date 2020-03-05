@@ -38,6 +38,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
         formatter.timeStyle = .short
         formatter.dateStyle = .short
         userTime = formatter.string(from: currentDateTime)
+        
 
     }
 
@@ -117,4 +118,12 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(confirmbutton)
         present(alert, animated: true, completion: nil)
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+      {
+          let nvc = segue.destination as! ViewController
+          nvc.Passingemail = email
+    }
+    
 }

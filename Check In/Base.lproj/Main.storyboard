@@ -20,13 +20,11 @@
                                 <rect key="frame" x="0.0" y="20" width="1190" height="366"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Sign-In" translatesAutoresizingMaskIntoConstraints="NO" id="OdI-0q-5Pp">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sign-In" translatesAutoresizingMaskIntoConstraints="NO" id="OdI-0q-5Pp">
                                 <rect key="frame" x="75" y="95" width="863" height="106"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kYO-sI-ERT">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kYO-sI-ERT">
                                 <rect key="frame" x="350" y="317" width="381" height="493"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TBl-nq-Aj1" customClass="GIDSignInButton">
                                         <rect key="frame" x="44" y="146" width="293" height="122"/>
@@ -52,7 +50,17 @@
                                 <color key="backgroundColor" red="0.18049335479736328" green="0.57063299417495728" blue="0.86278235912322998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kYO-sI-ERT" firstAttribute="bottom" secondItem="K46-Ue-n8J" secondAttribute="bottomMargin" id="ISn-Bp-wZo"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="OdI-0q-5Pp" secondAttribute="bottom" constant="609" id="J1J-kn-RQc"/>
+                            <constraint firstItem="kYO-sI-ERT" firstAttribute="top" secondItem="K46-Ue-n8J" secondAttribute="topMargin" constant="267" id="Rxd-NM-9yv"/>
+                            <constraint firstItem="OdI-0q-5Pp" firstAttribute="top" secondItem="K46-Ue-n8J" secondAttribute="topMargin" constant="45" id="Y0I-on-Hmn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OdI-0q-5Pp" secondAttribute="trailing" constant="122" id="YfU-LQ-RnS"/>
+                            <constraint firstItem="kYO-sI-ERT" firstAttribute="leading" secondItem="K46-Ue-n8J" secondAttribute="leadingMargin" constant="330" id="Z04-bM-5vk"/>
+                            <constraint firstItem="OdI-0q-5Pp" firstAttribute="leading" secondItem="K46-Ue-n8J" secondAttribute="leadingMargin" constant="55" id="dAa-Q5-Y2y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="kYO-sI-ERT" secondAttribute="trailing" constant="329" id="eVS-Ig-ENL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3nF-hb-STG"/>
                     </view>
                     <navigationItem key="navigationItem" id="kr2-vg-TIB"/>
