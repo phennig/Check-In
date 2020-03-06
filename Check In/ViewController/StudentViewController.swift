@@ -124,6 +124,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
       {
           let nvc = segue.destination as! ViewController
           nvc.Passingemail = email
+        nvc.Passingname = name
     }
     
 }

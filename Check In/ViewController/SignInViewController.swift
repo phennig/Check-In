@@ -35,7 +35,7 @@ class SignInViewController: UIViewController
             Studentemail = user.email as! String
             print(Studentemail)
             performSegue(withIdentifier: "GO", sender: self)
-                
+            
         }
        
         Background.layer.cornerRadius = 20
@@ -45,7 +45,7 @@ class SignInViewController: UIViewController
     }
     @IBAction func NextButton(_ sender: UIButton)
     {
-  
+          
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
