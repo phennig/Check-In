@@ -14,7 +14,9 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
     var name : Any?
     var teacher = ""
     var period = ""
-    var userTime : Any?
+    var userTime : String = ""
+    let currentDateTime = Date()
+    let formatter = DateFormatter()
     @IBOutlet weak var klcOutlet: UIButton!
     @IBOutlet weak var commonsOutlet: UIButton!
     @IBOutlet weak var lunchOutlet: UIButton!
@@ -26,7 +28,7 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         
-        let currentDateTime = Date()
+        
 
         // initialize the date formatter and set the style
         let formatter = DateFormatter()
@@ -78,8 +80,12 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
             else
             {
                 let db = Firestore.firestore()
-                db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name ,"Location" : selected, "Teacher" :self.teacher, "Period" : self.period, "Date submitted" : self.userTime])
-                self.Other.text = nil
+                let f = self.email as! String
+                let c = self.userTime
+                let splice = c.components(separatedBy: "/")
+                let d = f + "," + splice[0] + "." + splice[1] + "." + splice[2]
+                
+                db.collection("Student").document(d).setData(["Email" : self.email,"Name" : self.name, "Location" : selected, "Teacher" :self.teacher, "Period" : self.period, "Date submitted" : self.userTime])
                 self.dismiss(animated: true, completion: nil)
             }
             
@@ -106,7 +112,12 @@ class StudentViewController: UIViewController, UITextFieldDelegate {
                 else
                 {
                     let db = Firestore.firestore()
-                    db.collection("Student").document(self.email as! String).setData(["Email" : self.email,"Name" : self.name, "Location" : OtherLocation, "Teacher" :self.teacher, "Period" : self.period, "Date submitted" : self.userTime])
+                    let f = self.email as! String
+                    let c = self.userTime
+                    let splice = c.components(separatedBy: "/")
+                    let d = f + "," + splice[0] + "." + splice[1] + "." + splice[2]
+                    
+                    db.collection("Student").document(d).setData(["Email" : self.email,"Name" : self.name, "Location" : OtherLocation, "Teacher" :self.teacher, "Period" : self.period, "Date submitted" : self.userTime])
                      self.dismiss(animated: true, completion: nil)
                 }
                 self.Other.text = nil
