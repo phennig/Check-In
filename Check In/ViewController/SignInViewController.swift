@@ -26,17 +26,9 @@ class SignInViewController: UIViewController
         
        
 
-        
-        let user = Auth.auth().currentUser
-        if let user = user
-        {
-                  
-            Studentname = user.displayName as! String
-            Studentemail = user.email as! String
-            print(Studentemail)
-            performSegue(withIdentifier: "GO", sender: self)
-            
-        }
+        var helloWorldTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(SignInViewController.MoveOn), userInfo: nil, repeats: true)
+
+      
        
         Background.layer.cornerRadius = 20
      
@@ -56,6 +48,19 @@ class SignInViewController: UIViewController
         
     }
     
+    @objc func MoveOn()
+    {
+        let user = Auth.auth().currentUser
+        if let user = user
+        {
+                  
+            Studentname = user.displayName as! String
+            Studentemail = user.email as! String
+            print(Studentemail)
+            performSegue(withIdentifier: "GO", sender: self)
+            
+        }
+    }
     
 
 }

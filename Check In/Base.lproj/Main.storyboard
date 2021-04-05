@@ -38,7 +38,7 @@
                                         <rect key="frame" x="99" y="332" width="182" height="57"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                        <state key="normal" title="Next ">
+                                        <state key="normal" title="Log in">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
